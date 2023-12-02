@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "446836888023",
+    "project_id": "stusama-e96bb",
+    "storage_bucket": "stusama-e96bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446836888023:android:7d17b1fcfe5a15db3fbb92",
+        "android_client_info": {
+          "package_name": "com.example.tugas_rancang"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFSVOF8CTRUu9qsO0Hc4ZSOWRC9FLK7qw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
