@@ -30,6 +30,7 @@ class Pengajuan extends StatelessWidget {
         ),
         body: SingleChildScrollView(
             child: Padding(
+                // ignore: sort_child_properties_last
                 child: Container(
                     decoration: const BoxDecoration(color: Colors.blueAccent),
                     child: Column(
@@ -42,7 +43,7 @@ class Pengajuan extends StatelessWidget {
                             decoration: BoxDecoration(
                                 border: Border.all(),
                                 color: const Color.fromARGB(255, 231, 216, 74)),
-                            child: Text('Pengajuan'))
+                            child: const Text('Pengajuan'))
                       ],
                     )),
                 padding: EdgeInsets.symmetric(

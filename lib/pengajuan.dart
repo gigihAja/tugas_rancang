@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tugas_rancang/firestore_service.dart';
+import 'package:tugas_rancang/save_result_hasil_pengajuan.dart';
 import 'mata_pelajaran.dart';
 import 'jadwal_pelajaran.dart';
 import 'hasil_pengajuan.dart';
@@ -44,6 +46,7 @@ class _PengajuanState extends State<Pengajuan> {
       body: SingleChildScrollView(
         child: Container(
           height: size.height,
+          width: size.width,
           decoration:
               const BoxDecoration(color: Color.fromARGB(255, 68, 255, 246)),
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
@@ -118,6 +121,14 @@ class _PengajuanState extends State<Pengajuan> {
                       // Check if both date and subject are selected
                       if (_dateController.text.isNotEmpty &&
                           _selectedSubject != null) {
+                        String jadwalPelajaranResult = _dateController.text;
+                        String mataPelajaranResult = _selectedSubject!.name;
+
+                        FirestoreService.saveResult(SaveResultGabung(
+                          jadwalPel: jadwalPelajaranResult,
+                          mapel: mataPelajaranResult,
+                        ));
+
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -162,7 +173,7 @@ class _PengajuanState extends State<Pengajuan> {
                         color: Color.fromARGB(255, 149, 252, 153),
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
               const SizedBox(height: 20.0),
@@ -172,7 +183,7 @@ class _PengajuanState extends State<Pengajuan> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),
                   color: _dateController.text.isEmpty
-                      ? Color.fromARGB(255, 68, 255, 246)
+                      ? const Color.fromARGB(255, 68, 255, 246)
                       : Colors.white,
                 ),
                 child: Row(
@@ -244,7 +255,7 @@ class _PengajuanState extends State<Pengajuan> {
                   borderRadius: BorderRadius.circular(20.0),
                   color: _selectedSubject?.name.isNotEmpty ?? false
                       ? Colors.white
-                      : Color.fromARGB(255, 68, 255, 246),
+                      : const Color.fromARGB(255, 68, 255, 246),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
